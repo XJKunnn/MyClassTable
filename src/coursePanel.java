@@ -114,8 +114,9 @@ public class coursePanel extends JPanel {
                 Conn con = new Conn();
                 List<Course> getCourse = con.getCourse();
                 for(int n = 0; n < getCourse.size(); n++){
-                    AddCourse addNew = new AddCourse(course, getCourse.get(n));
+                    new AddCourse(course, getCourse.get(n));
                 }
+                new Conn().addCourse(course, new Course("science", 3, 5, 5, "信息学部"));
             }
         });
     }

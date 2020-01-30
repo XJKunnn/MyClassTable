@@ -1,4 +1,5 @@
 //导入包
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -84,6 +85,35 @@ public class Conn {
             stmt = con.createStatement();
             String sql= "DELETE FROM course_table WHERE name = " + "'" + name + "'" + ";";
             stmt.execute(sql);
+            stmt.close();
+            con.close();
+        } catch (SQLException se){
+            se.printStackTrace();
+        } catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            try{
+                if(stmt != null) stmt.close();
+            }catch(SQLException se2){
+            }// 什么都不做
+            try{
+                if(con != null) con.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }
+        }
+    }
+
+    public void addCourse(JPanel course_panel, Course course){
+        try{
+
+            stmt = con.createStatement();
+            String sql = "INSERT INTO course_table VALUES (" + "'" + course.getName()+ "'," +
+                        course.getStart_time() + "," + course.getEnd_time() + "," +
+                        course.getCourse_day() + "," + course.getStart_week() + "," +
+                        course.getEnd_week() + ",'" + course.getLocation() + "')";
+            stmt.execute(sql);
+            new AddCourse(course_panel, course);
             stmt.close();
             con.close();
         } catch (SQLException se){
