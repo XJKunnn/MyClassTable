@@ -11,7 +11,7 @@ public class Control{
         addCourse.setBounds(115*2, 30*2, 100, 30*3);
         addCourse.setBackground(Color.YELLOW);
         addCourse.setVisible(true);
-        addCourse.addMouseListener(new Mouse());
+        addCourse.addMouseListener(new Mouse(course_panel));
         course_panel.add(addCourse);
         course_panel.updateUI();
     }

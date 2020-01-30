@@ -4,7 +4,7 @@ import java.util.List;
 
 public class coursePanel extends JPanel {
     static int LESSEN_OFFSET = 30;
-    static JPanel course;
+    static JPanel course_panel;
 
     public coursePanel(){
         setLayout(null);
@@ -20,6 +20,7 @@ public class coursePanel extends JPanel {
         blankPanel.setPreferredSize(new Dimension(50, 60));
         blankPanel.setBounds(0,0, 50, 60);
         blankPanel.setBackground(Color.YELLOW);
+
         lessenPanel.add(blankPanel);
 
         for(int i = 1; i <= 13; i++){
@@ -60,13 +61,15 @@ public class coursePanel extends JPanel {
             x_offset += 115;
         }
 
-        course = new JPanel();
-        course.setLayout(null);
-        course.setPreferredSize(new Dimension(790, 390));
-        course.setBounds(0, 60, 790, 390);
+        course_panel = new JPanel();
+        course_panel.setLayout(null);
+        course_panel.setPreferredSize(new Dimension(790, 390));
+        course_panel.setBounds(0, 60, 790, 390);
+
+        blankPanel.addMouseListener(new Mouse(course_panel));
 
         weekPanel.add(week);
-        weekPanel.add(course);
+        weekPanel.add(course_panel);
 
         add(lessenPanel);
         add(weekPanel);
@@ -114,9 +117,9 @@ public class coursePanel extends JPanel {
                 Conn con = new Conn();
                 List<Course> getCourse = con.getCourse();
                 for(int n = 0; n < getCourse.size(); n++){
-                    new AddCourse(course, getCourse.get(n));
+                    new AddCourse(course_panel, getCourse.get(n));
                 }
-                DialogOfCourse dialogOfCourse = new DialogOfCourse(course);
+//                DialogOfCourse dialogOfCourse = new DialogOfCourse(course_panel);
             }
         });
     }

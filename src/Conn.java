@@ -21,6 +21,7 @@ public class Conn {
     Connection con;
     Statement stmt;
     private List<Course> getCourseList = new ArrayList<>();
+    private Course findCourse;
 
     public Conn(){
         try {
@@ -130,6 +131,42 @@ public class Conn {
                 se.printStackTrace();
             }
         }
+    }
+
+    public Course findCourse(String name){
+        try{
+            stmt = con.createStatement();
+            String sql;
+            sql = "SELECT start_time, end_time, course_day, location FROM course_table " +
+                    "WHERE name = " + "'" + name + "'" + ";";
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()){
+                int start_time = rs.getInt("start_time");
+                int end_time = rs.getInt("end_time");
+                int course_day = rs.getInt("course_day");
+                String location = rs.getString("location");
+                findCourse = new Course(name, start_time, end_time, course_day, location);
+            }
+            rs.close();
+            stmt.close();
+            con.close();
+        } catch (SQLException se){
+            se.printStackTrace();
+        } catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            try{
+                if(stmt != null) stmt.close();
+            }catch(SQLException se2){
+            }// 什么都不做
+            try{
+                if(con != null) con.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }
+        }
+        return findCourse;
     }
 
     public static void main(String[] args) {

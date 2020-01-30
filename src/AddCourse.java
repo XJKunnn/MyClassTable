@@ -21,7 +21,7 @@ public class AddCourse extends JPanel {
                 100, 30 * (END_TIME - START_TIME + 1));
         panel.setBackground(Color.YELLOW);
         panel.setVisible(true);
-        panel.addMouseListener(new Mouse());
+        panel.addMouseListener(new Mouse(course_panel));
 
         JLabel name = new JLabel(course.getName());
         name.setBounds(20, 30 * (END_TIME - START_TIME + 1) / 2 - 30, 60, 20);
