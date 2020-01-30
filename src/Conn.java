@@ -104,7 +104,7 @@ public class Conn {
         }
     }
 
-    public void addCourse(JPanel course_panel, Course course){
+    public void addCourse(Course course){
         try{
 
             stmt = con.createStatement();
@@ -113,7 +113,6 @@ public class Conn {
                         course.getCourse_day() + "," + course.getStart_week() + "," +
                         course.getEnd_week() + ",'" + course.getLocation() + "')";
             stmt.execute(sql);
-            new AddCourse(course_panel, course);
             stmt.close();
             con.close();
         } catch (SQLException se){

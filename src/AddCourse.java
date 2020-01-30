@@ -17,7 +17,7 @@ public class AddCourse extends JPanel {
 
         panel = new JPanel();
         panel.setLayout(null);
-        panel.setBounds(115 * (COURSE_DAY - 1), 30 * (START_TIME - 1),
+        panel.setBounds(115 * (COURSE_DAY ), 30 * (START_TIME - 1),
                 100, 30 * (END_TIME - START_TIME + 1));
         panel.setBackground(Color.YELLOW);
         panel.setVisible(true);

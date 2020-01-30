@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00fa56d8-c2fa-4571-9a22-b24af67020d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyClassTable/Conn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyClassTable/Conn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyClassTable/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyClassTable/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyClassTable/DialogOfCourse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyClassTable/DialogOfCourse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyClassTable/coursePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyClassTable/coursePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyClassTable/coursePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyClassTable/coursePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddCourse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Conn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DialogOfCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DialogOfCourse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/coursePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/coursePanel.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,15 +83,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GUIDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GUIDemo" />
+    <configuration name="DialogOfCourse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DialogOfCourse" />
       <module name="MyClassTable" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSize" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestSize" />
+    <configuration name="GUIDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUIDemo" />
       <module name="MyClassTable" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -102,10 +107,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.coursePanel" />
+        <item itemvalue="Application.DialogOfCourse" />
         <item itemvalue="Application.Demo" />
         <item itemvalue="Application.GUIDemo" />
         <item itemvalue="Application.Conn" />
-        <item itemvalue="Application.TestSize" />
       </list>
     </recent_temporary>
   </component>
@@ -134,8 +139,16 @@
       <workItem from="1580205325987" duration="15457000" />
       <workItem from="1580289138779" duration="1652000" />
       <workItem from="1580299617397" duration="5755000" />
-      <workItem from="1580369927258" duration="1744000" />
+      <workItem from="1580369927258" duration="8405000" />
     </task>
+    <task id="LOCAL-00001" summary="添加了新增数据库的功能">
+      <created>1580372193670</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580372193670</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,5 +164,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加了新增数据库的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了新增数据库的功能" />
   </component>
 </project>

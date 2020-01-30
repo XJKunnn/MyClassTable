@@ -116,7 +116,7 @@ public class coursePanel extends JPanel {
                 for(int n = 0; n < getCourse.size(); n++){
                     new AddCourse(course, getCourse.get(n));
                 }
-                new Conn().addCourse(course, new Course("science", 3, 5, 5, "信息学部"));
+                DialogOfCourse dialogOfCourse = new DialogOfCourse(course);
             }
         });
     }
