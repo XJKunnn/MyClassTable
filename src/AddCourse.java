@@ -14,6 +14,8 @@ public class AddCourse extends JPanel {
         START_TIME = course.getStart_time();
         END_TIME = course.getEnd_time();
         COURSE_DAY = course.getCourse_day();
+        START_WEEK = course.getStart_week();
+        END_WEEK = course.getEnd_week();
 
         panel = new JPanel();
         panel.setLayout(null);

@@ -383,7 +383,7 @@ public class DialogOfCourse extends JDialog implements ActionListener {
         int startTime = startTimeBox.getSelectedIndex() + 1;
         int endTime = endTimeBox.getSelectedIndex() + 1;
         int courseDay = courseDayBox.getSelectedIndex();
-        Course course = new Course(name, startTime, endTime, courseDay, location);
+        Course course = new Course(name, startTime, endTime, courseDay, location, startWeek, endWeek);
         new AddCourse(coursePanel, course);
         new Conn().addCourse(course);
     }

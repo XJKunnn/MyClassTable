@@ -75,6 +75,10 @@ public class coursePanel extends JPanel {
         add(weekPanel);
     }
 
+    public JPanel getCourse_panel(){
+        return course_panel;
+    }
+
     public String getDay(int i){
         String day = "null";
         switch (i){
@@ -108,12 +112,6 @@ public class coursePanel extends JPanel {
             @Override
             public void run() {
                 createAndShowGUI();
-//                Control controlManager = new Control();
-//                controlManager.addCourse(course);
-//                Course newCourse = new Course("math", 6, 8, 6, "信息学部");
-//                AddCourse addNew = new AddCourse(course, newCourse);
-//                Course newCourse1 = new Course("science", 1, 5, 4, "文理学部");
-//                AddCourse addNew1 = new AddCourse(course, newCourse1);
                 Conn con = new Conn();
                 List<Course> getCourse = con.getCourse();
                 for(int n = 0; n < getCourse.size(); n++){
