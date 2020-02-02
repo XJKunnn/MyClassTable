@@ -50,8 +50,7 @@ public class Conn {
             String sql;
             sql = "SELECT name, start_time, end_time, course_day, location, start_week, end_week " +
                     "FROM course_table " +
-                    "WHERE start_week <= " + Init.targetWeek + " AND end_week >= " + Init.targetWeek + ";";
-            System.out.println(sql);
+                    "WHERE start_week <= " + Timer.targetWeek + " AND end_week >= " + Timer.targetWeek + ";";
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()){
@@ -211,6 +210,7 @@ public class Conn {
     }
 
     public boolean findDate(){
+        boolean flag = false;
         try{
             stmt = con.createStatement();
             String sql;
@@ -241,8 +241,9 @@ public class Conn {
                 if(end_day < 10){
                     e_day = "0" + end_day;
                 }
-                Demo.startDate = sf.parse(start_Year + "-" + month + "-" + day);
-                Demo.endDate = sf.parse(end_Year + "-" + e_month + "-" + e_day);
+                Timer.startDate = sf.parse(start_Year + "-" + month + "-" + day);
+                Timer.endDate = sf.parse(end_Year + "-" + e_month + "-" + e_day);
+                flag = true;
             }
             rs.close();
             stmt.close();
@@ -262,7 +263,7 @@ public class Conn {
                 se.printStackTrace();
             }
         }
-        return true;
+        return flag;
     }
 
     public static void main(String[] args) {

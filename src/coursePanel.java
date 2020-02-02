@@ -4,11 +4,11 @@ import java.util.List;
 
 public class coursePanel extends JPanel {
     static int LESSEN_OFFSET = 30;
-    static JPanel course_panel;
 
     public coursePanel(){
         setLayout(null);
         this.setPreferredSize(new Dimension(840, 450));
+        this.setBounds(0, 0, 840, 450);
 
         //lessenPanel
         JPanel lessenPanel = new JPanel();
@@ -61,23 +61,20 @@ public class coursePanel extends JPanel {
             x_offset += 115;
         }
 
-        course_panel = new JPanel();
-        course_panel.setLayout(null);
-        course_panel.setPreferredSize(new Dimension(790, 390));
-        course_panel.setBounds(0, 60, 790, 390);
+        Demo.course_panel = new JPanel();
+        Demo.course_panel.setLayout(null);
+        Demo.course_panel.setPreferredSize(new Dimension(790, 390));
+        Demo.course_panel.setBounds(0, 60, 790, 390);
 
-        blankPanel.addMouseListener(new Mouse(course_panel));
+        blankPanel.addMouseListener(new Mouse(Demo.course_panel));
 
         weekPanel.add(week);
-        weekPanel.add(course_panel);
+        weekPanel.add(Demo.course_panel);
 
         add(lessenPanel);
         add(weekPanel);
     }
 
-    public JPanel getCourse_panel(){
-        return course_panel;
-    }
 
     public String getDay(int i){
         String day = "null";
@@ -94,31 +91,4 @@ public class coursePanel extends JPanel {
         return day;
     }
 
-    public static void createAndShowGUI(){
-        JFrame frame = new JFrame("coursePanel");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        coursePanel course_panel = new coursePanel();
-        frame.add(course_panel);
-
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-
-
-    public static void main(String args[]){
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                createAndShowGUI();
-                Conn con = new Conn();
-                List<Course> getCourse = con.getCourse();
-                for(int n = 0; n < getCourse.size(); n++){
-                    new AddCourse(course_panel, getCourse.get(n));
-                }
-//                DialogOfCourse dialogOfCourse = new DialogOfCourse(course_panel);
-            }
-        });
-    }
 }

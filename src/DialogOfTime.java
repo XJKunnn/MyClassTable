@@ -22,7 +22,6 @@ public class DialogOfTime extends JDialog implements ActionListener {
     static final int TEXT_HEIGHT = 20;
     JTextField startTimeText, lengthText;
 
-    Timer timer;
     Date startDate, endDate;
 
     static private JPanel course_panel;
@@ -94,17 +93,17 @@ public class DialogOfTime extends JDialog implements ActionListener {
                     int lengthWeek = Integer.parseInt(lengthText.getText());
                     SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");       //dd not DD
                     Date setDate = sf.parse(setTime);
-                    timer = new Timer(setDate, lengthWeek);
-                    this.setStartDate(timer.getStartDate());
-                    this.setEndDate(timer.getEndDate());
-                    new Conn().addTime(timer);
-                    Init init = new Init(course_panel);
-                    init.createAndShowGUI();
-                    new Conn().findDate();
-                    init.calStartWeek(Demo.startDate);
-                    System.out.println(Demo.startDate + " " + Demo.endDate );
-                    init.firstSHowCourse();
-                    this.setVisible(false);
+                    Demo.timer = new Timer(setDate, lengthWeek);
+                    this.setStartDate(Demo.timer.getStartDate());
+                    this.setEndDate(Demo.timer.getEndDate());
+                    new Conn().addTime(Demo.timer);
+                    Init init = new Init();
+                    if(new Conn().findDate()){
+                        init.setTimer();
+                        init.createAndShowGUI();
+                        init.firstSHowCourse();
+                        this.setVisible(false);
+                    }
                     break;
                 } catch (ParseException pe){
                     pe.printStackTrace();
@@ -114,12 +113,6 @@ public class DialogOfTime extends JDialog implements ActionListener {
             default:
                 break;
         }
-    }
-
-
-
-    public Timer getTimer(){
-        return timer;
     }
 
     public void setStartDate(Date date){
